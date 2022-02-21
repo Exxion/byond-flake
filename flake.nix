@@ -20,8 +20,8 @@
     flake = false;
   };
 
-  outputs = { nixpkgs, byond, dx2010, ... }: {
-    defaultPackage.x86_64-linux = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
+  outputs = { self, nixpkgs, byond, dx2010, ... }: {
+    packages.x86_64-linux."514.1578_byond" = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
       stdenv.mkDerivation (let wineprefix = "~/.wineprefix/byond"; in {
         pname = "byond";
         version = "514.1578";
@@ -60,5 +60,7 @@
           chmod +x dreammaker
         '';
       });
+
+    defaultPackage.x86_64-linux = self.outputs.packages.x86_64-linux."514.1578_byond";
   };
 }
