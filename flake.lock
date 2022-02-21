@@ -12,6 +12,18 @@
         "url": "https://www.byond.com/download/build/514/514.1578_byond.zip"
       }
     },
+    "dx2010": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-JD6jJIEt5bvLycYQtQ8DxQBMZCT+hADMcZFthJREVOc=",
+        "path": "/home/Exxion/Documents/Flakes/BYOND/dx2010",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/Exxion/Documents/Flakes/BYOND/dx2010",
+        "type": "path"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1645013224,
@@ -29,6 +41,7 @@
     "root": {
       "inputs": {
         "byond": "byond",
+        "dx2010": "dx2010",
         "nixpkgs": "nixpkgs"
       }
     }

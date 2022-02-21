@@ -15,8 +15,8 @@
   };
 
   inputs.dx2010 = {
-    type = "file";
-    path = "./dx2010";
+    type = "path";
+    path = "/home/Exxion/Documents/Flakes/BYOND/dx2010";
     flake = false;
   };
 
@@ -27,20 +27,21 @@
         version = "514.1578";
         src = "${byond}";
 
-        buildInputs = [ pkgs.wine pkgs.winetricks dx2010 ];
+        buildInputs = [ pkgs.wine pkgs.winetricks ];
 
         installPhase = ''
           mkdir -p $out
           cp -a * $out
 
           cd $out/bin
-          echo "mkdir -p ${wineprefix}" >> runbyond
           echo "export WINEPREFIX=${wineprefix}" >> runbyond
           echo "export WINE=${wine}/bin/wine" >> runbyond
           echo "export WINEPATH=$out/bin" >> runbyond
           echo "export WINEARCH=win32" >> runbyond
-          echo "\$WINE ${dx2010}/DXSETUP.exe" >> runbyond
-          echo "${winetricks}/bin/winetricks corefonts mfc42 gdiplus vcrun2013 wsh57 windowscodecs ogg ole32 riched30 msls31 wmp10" >> runbyond
+
+          echo "${wine}/bin/wine ${dx2010}/DXSETUP.exe" >> runbyond
+
+          echo "${winetricks}/bin/winetricks allfonts mfc42 gdiplus vcrun2010 wsh57 windowscodecs ogg ole32 riched30 msls31 wmp10 vlc" >> runbyond
           echo "${winetricks}/bin/winetricks ie8" >> runbyond
 
           cat runbyond >> byond
