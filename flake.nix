@@ -15,8 +15,7 @@
   };
 
   inputs.dx2010 = {
-    type = "path";
-    path = "/home/Exxion/Documents/Flakes/BYOND/dx2010";
+    url = "path:./dx2010";
     flake = false;
   };
 
