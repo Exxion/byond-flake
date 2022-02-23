@@ -5,7 +5,7 @@
     type = "indirect";
     id = "nixpkgs";
   };
-  
+
   inputs.byond = {
     type = "tarball";
     #version = 514;
@@ -39,25 +39,34 @@
           echo "export WINEPATH=$out/bin" >> runbyond
           echo "export WINEARCH=win32" >> runbyond
 
+          echo "if [-d ${wineprefix}]; then" >> runbyond
+
           echo "${wine}/bin/wine ${dx2010}/DXSETUP.exe" >> runbyond
 
           echo "${winetricks}/bin/winetricks allfonts mfc42 gdiplus vcrun2010 wsh57 windowscodecs ogg ole32 riched30 msls31 wmp10 vlc" >> runbyond
           echo "${winetricks}/bin/winetricks ie8" >> runbyond
+
+          echo "fi" >> runbyond
 
           cat runbyond >> byond
           echo "\$WINE $out/bin/byond.exe" >> byond
 
           chmod +x byond
 
-          cat runbyond >> dreamseeker
-          echo "\$WINE $out/bin/dreamseeker.exe" >> dreamseeker
+          # cat runbyond >> dreamseeker
+          # echo "\$WINE $out/bin/dreamseeker.exe" >> dreamseeker
 
-          chmod +x dreamseeker
+          # chmod +x dreamseeker
 
-          cat runbyond >> dreammaker
-          echo "\$WINE $out/bin/dreammaker.exe" >> dreammaker
+          # cat runbyond >> dreammaker
+          # echo "\$WINE $out/bin/dreammaker.exe" >> dreammaker
 
-          chmod +x dreammaker
+          # chmod +x dreammaker
+
+          # cat runbyond >> DreamMaker
+          # echo "\$WINE $out/bin/dm.exe \$1" >> DreamMaker
+
+          # chmod +x DreamMaker
         '';
       });
 
