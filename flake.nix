@@ -9,8 +9,8 @@
   inputs.byond = {
     type = "tarball";
     #version = 514;
-    #build = 1578;
-    url = "https://www.byond.com/download/build/514/514.1578_byond.zip";
+    #build = 1579;
+    url = "https://www.byond.com/download/build/514/514.1579_byond.zip";
     flake = false;
   };
 
@@ -21,10 +21,10 @@
   };
 
   outputs = { self, nixpkgs, byond, dx2010, ... }: {
-    packages.x86_64-linux."514.1578_byond" = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
+    packages.x86_64-linux."514.1579_byond" = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
       stdenv.mkDerivation (let wineprefix = "~/.wineprefix/byond"; in {
         pname = "byond";
-        version = "514.1578";
+        version = "514.1579";
         src = "${byond}";
 
         buildInputs = [ pkgs.wine pkgs.winetricks ];
@@ -70,6 +70,6 @@
         '';
       });
 
-    defaultPackage.x86_64-linux = self.outputs.packages.x86_64-linux."514.1578_byond";
+    defaultPackage.x86_64-linux = self.outputs.packages.x86_64-linux."514.1579_byond";
   };
 }
