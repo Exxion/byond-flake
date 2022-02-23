@@ -1,15 +1,9 @@
 {
   description = "The BYOND game engine";
 
-  inputs.nixpkgs = {
-    type = "indirect";
-    id = "nixpkgs";
-  };
-
   inputs.byond = {
     type = "tarball";
-    #version = 514;
-    #build = 1580;
+    #Unfortunately, there does not appear to be any way to either generate this URL from the version numbers or get the version numbers from the URL.
     url = "https://www.byond.com/download/build/514/514.1580_byond.zip";
     flake = false;
   };
@@ -19,11 +13,11 @@
     flake = false;
   };
 
-  outputs = { self, nixpkgs, byond, dx2010, ... }: {
-    packages.x86_64-linux."514.1580_byond" = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
+  outputs = { self, nixpkgs, byond, dx2010, ... }: let byond_ver = "514"; byond_build = "1580"; in rec {
+    packages.x86_64-linux."${byond_ver}.${byond_build}_byond" = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
       stdenv.mkDerivation (let wineprefix = "~/.wineprefix/byond"; in {
         pname = "byond";
-        version = "514.1580";
+        version = "${byond_ver}.${byond_build}";
         src = "${byond}";
 
         buildInputs = [ pkgs.wine pkgs.winetricks ];
@@ -69,6 +63,6 @@
         '';
       });
 
-    defaultPackage.x86_64-linux = self.outputs.packages.x86_64-linux."514.1580_byond";
+    defaultPackage.x86_64-linux = packages.x86_64-linux."${byond_ver}.${byond_build}_byond";
   };
 }
