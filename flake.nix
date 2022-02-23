@@ -39,7 +39,7 @@
           echo "export WINEPATH=$out/bin" >> runbyond
           echo "export WINEARCH=win32" >> runbyond
 
-          echo "if [-d ${wineprefix}]; then" >> runbyond
+          echo "if [ ! -d ${wineprefix} ]; then" >> runbyond
 
           echo "${wine}/bin/wine ${dx2010}/DXSETUP.exe" >> runbyond
 
