@@ -1,5 +1,5 @@
 {
-  description = "The BYOND game engine";
+  description = "The BYOND game engine.";
 
   inputs.byond = {
     type = "tarball";
@@ -61,6 +61,13 @@
 
           # chmod +x DreamMaker
         '';
+
+        meta = with lib; { #Is this even useful in a flake?
+          description = "The BYOND game engine, plus dependencies for at least SS13.";
+          homepage = "https://www.byond.com/";
+          license = licenses.unfree;
+          platforms = [ "x86_64-linux" ];
+        };
       });
 
     defaultPackage.x86_64-linux = packages.x86_64-linux."${byond_ver}.${byond_build}_byond";
