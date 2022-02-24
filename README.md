@@ -7,6 +7,7 @@ Notes:
 * The first run will take a very long time and will require you to interact with some menus because old Windows installers were bad. It will also place a nonfunctional shortcut to VLC on your desktop. Sorry.
 * I'd love to pull in the dx2010 files from a remote tarball rather than bundling them directly, but the tarball I found has all the files directly in it and Nix cannot open a tarball containing more than one top-level file/folder. It's from Lutris, for the record.
 * Currently only installs the Windows build. At some point I'll either add the Linux tools or make a separate, much simpler flake for that.
+* The pager and Dream Seeker work fine, but don't try to use Dream Maker. Though I'm not sure why you would want to anyway.
 * Creates and uses its own Wine prefix folder at ~/.wineprefix/byond. This can be changed if a different path would be more convenient.
 * You can override the BYOND URL for this in a separate flake to use a different BYOND version, though the package will still use the version used here for the name unless you do additional stuff.
 * I feel obligated to mention that the style here is standard for Nix and I use it begrudgingly.
