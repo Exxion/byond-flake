@@ -27,6 +27,7 @@
           cp -a * $out
 
           cd $out/bin
+          echo "#! /usr/bin/bash" >> runbyond
           echo "export WINEPREFIX=${wineprefix}" >> runbyond
           echo "export WINE=${wine}/bin/wine" >> runbyond
           echo "export WINEPATH=$out/bin" >> runbyond
