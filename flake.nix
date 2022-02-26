@@ -28,7 +28,8 @@
 
           cd $out/bin
           echo "#! /usr/bin/bash" >> runbyond
-          echo "export WINEPREFIX=${wineprefix}" >> runbyond
+          echo "WINEPREFIX=${wineprefix}" >> runbyond #You're not supposed to use tilde expansion directly in an export statement, and $HOME doesn't work here without double-escaping it
+          echo "export WINEPREFIX" >> runbyond
           echo "export WINE=${wine}/bin/wine" >> runbyond
           echo "export WINEPATH=$out/bin" >> runbyond
           echo "export WINEARCH=win32" >> runbyond
