@@ -36,7 +36,7 @@
 
           echo "if [ ! -d ${wineprefix} ]; then" >> runbyond
 
-          echo "${wine}/bin/wine ${dx2010}/DXSETUP.exe" >> runbyond
+          echo "\$WINE ${dx2010}/DXSETUP.exe" >> runbyond
 
           echo "${winetricks}/bin/winetricks allfonts mfc42 gdiplus vcrun2010 wsh57 windowscodecs ogg ole32 riched30 msls31 wmp10 vlc" >> runbyond
           echo "${winetricks}/bin/winetricks ie8" >> runbyond
