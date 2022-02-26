@@ -14,7 +14,7 @@
   };
 
   outputs = { self, nixpkgs, byond, dx2010, ... }: let byond_ver = "514"; byond_build = "1581"; in rec {
-    packages.x86_64-linux."${byond_ver}.${byond_build}_byond" = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
+    packages.x86_64-linux.byond = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
       stdenv.mkDerivation (let wineprefix = "~/.wineprefix/byond"; in {
         pname = "byond";
         version = "${byond_ver}.${byond_build}";
@@ -71,6 +71,6 @@
         };
       });
 
-    defaultPackage.x86_64-linux = packages.x86_64-linux."${byond_ver}.${byond_build}_byond";
+    defaultPackage.x86_64-linux = packages.x86_64-linux.byond;
   };
 }
