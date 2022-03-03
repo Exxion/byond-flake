@@ -12,18 +12,6 @@
         "url": "https://www.byond.com/download/build/514/514.1581_byond.zip"
       }
     },
-    "dx2010": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-Qs3w84c7cP6etDP0Fo7uhpsWkRUJiHZw3d1oLB4ovMs=",
-        "path": "./dx2010",
-        "type": "path"
-      },
-      "original": {
-        "path": "./dx2010",
-        "type": "path"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1646304023,
@@ -41,7 +29,6 @@
     "root": {
       "inputs": {
         "byond": "byond",
-        "dx2010": "dx2010",
         "nixpkgs": "nixpkgs"
       }
     }

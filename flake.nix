@@ -8,12 +8,7 @@
     flake = false;
   };
 
-  inputs.dx2010 = {
-    url = "path:./dx2010";
-    flake = false;
-  };
-
-  outputs = { self, nixpkgs, byond, dx2010, ... }: let byond_ver = "514"; byond_build = "1581"; in rec {
+  outputs = { self, nixpkgs, byond, ... }: let byond_ver = "514"; byond_build = "1581"; in rec {
     packages.x86_64-linux.byond = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
       stdenv.mkDerivation (let wineprefix = "~/.wineprefix/byond"; in rec {
         pname = "byond";
@@ -44,10 +39,10 @@
 
           echo "if [ ! -d ${wineprefix} ]; then" >> runbyond
 
-          echo "\$WINE ${dx2010}/DXSETUP.exe" >> runbyond
-
           echo "${winetricks}/bin/winetricks allfonts mfc42 gdiplus vcrun2010 wsh57 windowscodecs ogg ole32 riched30 msls31 wmp10 vlc" >> runbyond
           echo "${winetricks}/bin/winetricks ie8" >> runbyond
+
+          echo "\$WINE $out/directx/DXSETUP.exe" >> runbyond
 
           echo "fi" >> runbyond
 

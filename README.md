@@ -7,7 +7,6 @@ Notes:
 * The list of Winetricks is just the one from bwo.ink but with some changes to make it actually work on my machine and actually play jukebox songs. I have no idea how many are actually necessary but I got tired of testing.
 * It is, as far as I am aware, impossible to actually have Wine and Winetricks set up their stuff in the build phase of the flake as would make sense. Instead, it happens on first run.
 * The first run will take a very long time and will require you to interact with some menus because old Windows installers were bad. It will also place a nonfunctional shortcut to VLC on your desktop. Sorry.
-* I'd love to pull in the dx2010 files from a remote tarball rather than bundling them directly, but the tarball I found has all the files directly in it and Nix cannot open a tarball containing more than one top-level file/folder. It's from Lutris, for the record.
 * Currently only installs the Windows build. At some point I'll either add the Linux tools or make a separate, much simpler flake for that.
 * The pager and Dream Seeker work fine, but don't try to use Dream Maker. Though I'm not sure why you would want to anyway.
 * Creates and uses its own Wine prefix folder at ~/.wineprefix/byond. This can be changed if a different path would be more convenient.
