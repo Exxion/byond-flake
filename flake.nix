@@ -27,7 +27,7 @@
           exec = name;
           icon = name;
           desktopName = "BYOND";
-          categories = "Game";
+          categories = [ "Game" ];
         };
 
         installPhase = ''
