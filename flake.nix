@@ -15,12 +15,20 @@
 
   outputs = { self, nixpkgs, byond, dx2010, ... }: let byond_ver = "514"; byond_build = "1581"; in rec {
     packages.x86_64-linux.byond = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
-      stdenv.mkDerivation (let wineprefix = "~/.wineprefix/byond"; in {
+      stdenv.mkDerivation (let wineprefix = "~/.wineprefix/byond"; in rec {
         pname = "byond";
         version = "${byond_ver}.${byond_build}";
         src = "${byond}";
 
         buildInputs = [ pkgs.wine pkgs.winetricks ];
+
+        desktopItem = makeDesktopItem rec {
+          name = "byond";
+          exec = name;
+          icon = name;
+          desktopName = "BYOND";
+          categories = "Game";
+        };
 
         installPhase = ''
           mkdir -p $out
@@ -62,6 +70,9 @@
           # echo "\$WINE $out/bin/dm.exe \$1" >> DreamMaker
 
           # chmod +x DreamMaker
+
+          mkdir -p $out/share
+          cp -r ${desktopItem}/share/applications $out/share
         '';
 
         meta = with lib; { #Is this even useful in a flake?
