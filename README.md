@@ -2,7 +2,12 @@ Very early Nix flake to install BYOND and all dependencies required to play SS13
 
 Don't try to update BYOND with the update button in the pager. I don't know what will happen, but it won't work. Just pester me to update the version on here, or fork it, or override the input with another flake, or something.
 
-Notes:
+**Important note**:
+
+* The first time you run this, I recommend you do it through the console rather than a menu. Running it from a menu will work, but you will have no evidence that anything is happening for several minutes because Winetricks is incredibly slow. If you run it from the console, you can see that stuff is happening. After the first launch, launching from a menu is fine.
+
+Other notes:
+
 * This is my first flake and some of my first work with Linux stuff in general. This will probably be obvious if you look at the code.
 * The list of Winetricks is just the one from bwo.ink but with some changes to make it actually work on my machine and actually play jukebox songs. I have no idea how many are actually necessary but I got tired of testing.
 * It is, as far as I am aware, impossible to actually have Wine and Winetricks set up their stuff in the build phase of the flake as would make sense. Instead, it happens on first run.
