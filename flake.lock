@@ -3,13 +3,13 @@
     "byond": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-ESm0Ca4EsjcgssEZUNTg/MwPoikJOzmm2JQsfJlmSH4=",
+        "narHash": "sha256-L/8jtgJmTcuWL02tYT1Notp/EfXnNsNVY0ze/qK13Ko=",
         "type": "tarball",
-        "url": "https://www.byond.com/download/build/514/514.1581_byond.zip"
+        "url": "https://www.byond.com/download/build/514/514.1582_byond.zip"
       },
       "original": {
         "type": "tarball",
-        "url": "https://www.byond.com/download/build/514/514.1581_byond.zip"
+        "url": "https://www.byond.com/download/build/514/514.1582_byond.zip"
       }
     },
     "nixpkgs": {
