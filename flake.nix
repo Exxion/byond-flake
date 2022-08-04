@@ -54,7 +54,7 @@
           # cat runbyond >> dreamseeker
           # echo "\$WINE $out/bin/dreamseeker.exe" >> dreamseeker
 
-          chmod +x dreamseeker.exe
+          # chmod +x dreamseeker
 
           # cat runbyond >> dreammaker
           # echo "\$WINE $out/bin/dreammaker.exe" >> dreammaker
