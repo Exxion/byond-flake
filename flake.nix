@@ -50,19 +50,19 @@
           cd $out/bin
 
           cat $out/runbyond >> byond
-          echo "\$WINE $out/byond/bin/byond.exe" >> byond
+          echo "exec \$WINE $out/byond/bin/byond.exe \"\$@\"" >> byond
 
           chmod +x byond
 
-          #Awful hack below to (try to) make the VS Code extension's debugger work
+          #Awful hack below to make the VS Code extension's debugger work
 
           cat $out/runbyond >> dreamseeker.exe
-          echo "\$WINE $out/byond/bin/dreamseeker.exe \"\$@\"" >> dreamseeker.exe
+          echo "exec \$WINE $out/byond/bin/dreamseeker.exe \"\$@\"" >> dreamseeker.exe
 
           chmod +x dreamseeker.exe
 
           # cat $out/runbyond >> dreammaker.exe
-          # echo "\$WINE $out/byond/bin/dreammaker.exe \"\$@\"" >> dreammaker.exe
+          # echo "exec \$WINE $out/byond/bin/dreammaker.exe \"\$@\"" >> dreammaker.exe
 
           # chmod +x dreammaker.exe
 
