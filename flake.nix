@@ -26,10 +26,11 @@
         };
 
         installPhase = ''
-          mkdir -p $out
-          cp -a * $out
+          mkdir -p $out/byond
+          mkdir -p $out/bin
+          cp -a * $out/byond
 
-          cd $out/bin
+          cd $out
           echo "#! /usr/bin/bash" >> runbyond
           echo "WINEPREFIX=${wineprefix}" >> runbyond #You're not supposed to use tilde expansion directly in an export statement, and $HOME doesn't work here without double-escaping it
           echo "export WINEPREFIX" >> runbyond
@@ -46,25 +47,24 @@
 
           echo "fi" >> runbyond
 
-          cat runbyond >> byond
-          echo "\$WINE $out/bin/byond.exe" >> byond
+          cd $out/bin
+
+          cat $out/runbyond >> byond
+          echo "\$WINE $out/byond/bin/byond.exe" >> byond
 
           chmod +x byond
 
-          cat runbyond >> dreamseeker
-          echo "\$WINE $out/bin/dreamseeker.exe" >> dreamseeker
+          #Awful hack below to make the VS Code extension's debugger work
 
-          chmod +x dreamseeker
+          cat $out/runbyond >> dreamseeker.exe
+          echo "\$WINE $out/byond/bin/dreamseeker.exe" >> dreamseeker.exe
 
-          # cat runbyond >> dreammaker
-          # echo "\$WINE $out/bin/dreammaker.exe" >> dreammaker
+          chmod +x dreamseeker.exe
 
-          # chmod +x dreammaker
+          # cat $out/runbyond >> dreammaker.exe
+          # echo "\$WINE $out/byond/bin/dreammaker.exe" >> dreammaker.exe
 
-          # cat runbyond >> DreamMaker
-          # echo "\$WINE $out/bin/dm.exe \$1" >> DreamMaker
-
-          # chmod +x DreamMaker
+          # chmod +x dreammaker.exe
 
           mkdir -p $out/share
           cp -r ${desktopItem}/share/applications $out/share
