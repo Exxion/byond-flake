@@ -4,11 +4,11 @@
   inputs.byond = {
     type = "tarball";
     #Unfortunately, there does not appear to be any way to either generate this URL from the version numbers or get the version numbers from the URL.
-    url = "https://www.byond.com/download/build/514/514.1587_byond.zip";
+    url = "https://www.byond.com/download/build/514/514.1588_byond.zip";
     flake = false;
   };
 
-  outputs = { self, nixpkgs, byond, ... }: let byond_ver = "514"; byond_build = "1587"; in rec {
+  outputs = { self, nixpkgs, byond, ... }: let byond_ver = "514"; byond_build = "1588"; in rec {
     packages.x86_64-linux.byond = with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
       stdenv.mkDerivation (let wineprefix = "~/.wineprefix/byond"; in rec {
         pname = "byond";
