@@ -3,22 +3,22 @@
     "byond": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-mZNk3PMaZDsa+3yyubLQbnTz6mQZEcgK95n8gXGkSgk=",
+        "narHash": "sha256-NAJZmh074b+bqfHzmegD8MlH1e+OBfacnuToVX5laLE=",
         "type": "tarball",
-        "url": "https://www.byond.com/download/build/515/515.1595_byond.zip"
+        "url": "https://www.byond.com/download/build/515/515.1596_byond.zip"
       },
       "original": {
         "type": "tarball",
-        "url": "https://www.byond.com/download/build/515/515.1595_byond.zip"
+        "url": "https://www.byond.com/download/build/515/515.1596_byond.zip"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1668058645,
-        "narHash": "sha256-vHAXeYfKVO6ZbDN0GquEPVFZ42LzlYoX4ZWuKteFzj0=",
+        "lastModified": 1669076005,
+        "narHash": "sha256-uzMji2q9Pk3jUH+e5nEFtoOZCP4VV1PDRJRLVmriY0M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d01cb18be494e3d860fcfe6be4ad63614360333c",
+        "rev": "69335c46c48a73f291d5c6f332fb9fe8b8e22b30",
         "type": "github"
       },
       "original": {
