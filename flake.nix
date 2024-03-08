@@ -40,7 +40,7 @@
 
           echo "if [ ! -d ${wineprefix} ]; then" >> runbyond
 
-          echo "${winetricks}/bin/winetricks mimeassoc=off allfonts vcrun2022 vlc" >> runbyond
+          echo "${winetricks}/bin/winetricks mimeassoc=off allfonts vcrun2022 ole32 vlc" >> runbyond
           echo "${winetricks}/bin/winetricks ie8" >> runbyond
 
           echo "\$WINE $out/byond/directx/DXSETUP.exe" >> runbyond
