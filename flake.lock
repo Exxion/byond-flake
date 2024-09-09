@@ -3,21 +3,21 @@
     "byond": {
       "flake": false,
       "locked": {
-        "lastModified": 1721942815,
-        "narHash": "sha256-YRlmjcKlqqdWZHYeHyIqRQEiUorFAs6d3PuPGcXsc7E=",
+        "lastModified": 1724270045,
+        "narHash": "sha256-emnatJPfKvtXqrdomfvyUEggrI3gSOCxaX8LOHeyrqs=",
         "type": "tarball",
-        "url": "https://www.byond.com/download/build/515/515.1642_byond.zip"
+        "url": "https://www.byond.com/download/build/515/515.1643_byond.zip"
       },
       "original": {
         "type": "tarball",
-        "url": "https://www.byond.com/download/build/515/515.1642_byond.zip"
+        "url": "https://www.byond.com/download/build/515/515.1643_byond.zip"
       }
     },
     "nixpkgs": {
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-oedh2RwpjEa+TNxhg5Je9Ch6d3W1NKi7DbRO1ziHemA=",
-        "path": "/nix/store/iqxdbcjlg9wx8gdc8bdhy9nsd5imcbjp-source",
+        "narHash": "sha256-M0xJ3FbDUc4fRZ84dPGx5VvgFsOzds77KiBMW/mMTnI=",
+        "path": "/nix/store/0jr2kk95c34c0b6yxi75q4fqgb43kqkm-source",
         "type": "path"
       },
       "original": {
